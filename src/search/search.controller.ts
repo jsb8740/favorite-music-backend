@@ -2,7 +2,8 @@
 https://docs.nestjs.com/controllers#controllers
 */
 
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Param, Query } from '@nestjs/common';
+import { map } from 'rxjs';
 import { SearchService } from './search.service';
 
 @Controller('search')
@@ -10,7 +11,10 @@ export class SearchController {
   constructor(private searchService: SearchService) {}
 
   @Get()
-  async searchingMusic(): Promise<string> {
-    return 'search Test';
+  searchingMusic(@Query('keyword') keyword: string) {
+    // return `${keyword}`;
+    return this.searchService
+      .testApi(keyword)
+      .pipe(map((response) => response.data));
   }
 }
