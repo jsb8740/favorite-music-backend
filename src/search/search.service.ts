@@ -20,10 +20,10 @@ export class SearchService {
     const requestURL = new URL('/youtube/v3/search', this.GOOGLE_API_BASE_URL);
 
     // 10 == music
-    requestURL.searchParams.append('maxResults', '20');
+    requestURL.searchParams.append('maxResults', '12');
     // requestURL.searchParams.append('eventType', 'completed');
     // requestURL.searchParams.append('videoSyndicated', 'true');
-    // requestURL.searchParams.append('videoEmbeddable', 'true');
+    requestURL.searchParams.append('videoEmbeddable', 'true');
     requestURL.searchParams.append('videoCategoryId', '10');
     requestURL.searchParams.append('type', 'video');
     requestURL.searchParams.append('part', 'snippet');
