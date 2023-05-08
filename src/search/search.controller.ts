@@ -6,7 +6,7 @@ import { Controller, Get, Param, Query } from '@nestjs/common';
 import { map } from 'rxjs';
 import { SearchService } from './search.service';
 
-@Controller('search')
+@Controller('api/search')
 export class SearchController {
   constructor(private searchService: SearchService) {}
 
