@@ -9,7 +9,7 @@ import { HttpModule } from '@nestjs/axios';
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
-      envFilePath: ['.env.dev'],
+      envFilePath: ['.env', '.env.dev'],
     }),
     HttpModule,
     SearchModule,
